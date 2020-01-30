@@ -7,10 +7,12 @@
   background-color: rgba(0,0,0,0.1);
   z-index: 2;
 }
+.right-bar{
+}
 
 .nav__wrap{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .nav__list{
@@ -21,13 +23,60 @@
 }
 
 .nav__item{
-  margin-left: 20px;
+  margin: 10px;
+  opacity: 0.2;
+  transition-property: opacity;
+  transition-duration: 200ms;
+
+  &:hover{
+    opacity: 1;
+  }
 }
 
 .nav__link{
+  position: relative;
   font-family: 'Lato', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  color: $white;
+  color: black;
   text-decoration: none;
+  text-align: center;
+  padding: 6px 12px;
+  //border: 1px solid $blue;
+  border-radius: 20px;
+  transition-property: background-color;
+  transition-duration: 500ms;
+  background-color: lighten($blue, 10%);
+
+  &::after{
+    opacity: 0;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    background-color: #fff;
+    left: 50%;
+    bottom: -20px;
+    z-index: 10;
+    transform: translate(-50%);
+    transition-property: opacity;
+    transition-duration: 500ms;
+  }
+
+  &:hover{
+    //background-color: lighten($blue, 40%);
+
+    &::after{
+      opacity: 0.5;
+    }
+  }
 }
+.html5{ background-color: #e34d26; }
+.css3{ background-color: #1572b6; }
+.less{ background-color: #294b7e; }
+.sass{ background-color: #cf649a; }
+.gulp{ background-color: #ec494b; }
+.webpack{ background-color: #8cd3f8; }
+.vue{ background-color:#41b883; }
