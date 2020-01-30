@@ -1,8 +1,16 @@
+@import "variables.scss";
+html{
+    background-color: #151314;
+
+}
 .wrap{
+    margin: 0 auto;
     box-sizing: border-box;
     max-width: 1200px;
     padding: 15px;
 }
 .container{
+    position: relative;
     max-width: 1920px;
+    margin: 0 auto;
 }
